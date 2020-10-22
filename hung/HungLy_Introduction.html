@@ -6,81 +6,111 @@
 		<title>My Introduction</title>
 		<style type = "text/css">
 		h1     	{ font-size: 36pt;
-                 color: DarkBlue;}
+                color: DarkBlue;
+				text-shadow: 5px 5px 10px black;
+				animation-name: beforeafter;
+				animation-duration: 3s;
+				animation-iteration-count: infinite;}
+		@keyframes beforeafter{
+			0% {color: darkblue;}
+			50% {color: red;}
+			100% {color: darkblue;}
+			}
 		body  	{ background-image: url(UHD_logo.png);
                 background-position: bottom right;
                 background-repeat: no-repeat;
 				background-attachment: fixed;
                 background-color: lightgrey }
-		.text1  { position: absolute;
-                top: 870px;
-                left: 150px;
-                z-index: 3;
-                font-size: 20pt;
-                font-family: tahoma, geneva, sans-serif;
-				color: white}
-		.text2  { position: absolute;
-                top: 870px;
-                left: 245px;
-                z-index: 3;
-                font-size: 20pt;
-                font-family: tahoma, geneva, sans-serif;
-				color: white;}
 		.uh 	{ font-weight: bold;
 				color: darkblue;}
 		.d 		{ font-weight: bold;
 				color: red;}
+		p
+		{ margin: 0.9em 0em; }
+		.flexbox 
+         {
+            width: 600px;
+            height: 220px;
+            display: -webkit-box;
+            display: box;
+            -webkit-box-orient: horizontal;
+            box-orient: horizontal;
+         }
+        .flexbox > div 
+         {
+            -webkit-transition: 1s ease-out;
+            transition: 1s ease-out;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            border: 2px solid black;
+            width: 120px;
+            margin: 10px -10px 10px 0px;
+            padding: 20px 20px 20px 20px;
+            box-shadow: 10px 10px 10px dimgrey;
+         }
+        .flexbox > div:nth-child(1){ background-color: lightgrey; }
+        .flexbox > div:nth-child(2){ background-color: lightgrey; }
+
+        .flexbox > div:hover { 
+            width: 200px; color: white; font-weight: bold; }
+        .flexbox > div:nth-child(1):hover { background-color: royalblue; }
+        .flexbox > div:nth-child(2):hover { background-color: crimson; }
+		       
 		</style>
 	</head>
 	
 	<body>
-		<h1>Hung Ly</h1>
-		<img src="mypicture.jpeg" width="200" alt="Hung Ly">
-		<p><a href="https://www.linkedin.com/in/hung-ly-823201b5/">My LinkedIn</a> | 
-		<a href="https://github.com/kentleeme">My GitHub</a></p>
-		<p>
-		I am a senior Computer Science student of <span class="uh">University of Houston</span> - <span class="d">Downtown</span>. I am going to tell you the 3 things I love the most. One, I love to program, that is one of the reasons why I am taking this course for my last semester here in UHD. I love C++, Python, JavaScript, and programming in general. Thus, learning HTML5 and CSS should be exciting and fun. My goal is to have an application of my own in the future. Two, I also love Math. I am pretty good at working with numbers and when I was a kid, I always pictured myself becoming a math teacher when I grew up. Although, w it’s more like a shower thought but my love for Math still remains. Three, I love photo editing. I remember when I first owned an iPhone, I took a lot of pictures. Eventually, I learned how to edit pictures by using Photoshop from watching tutorials on YouTube. You can do infinity things with photoshop, all it takes is your imagination and creativity. I’ve also learned how to edit videos and post them on YouTube. In other words, I usually play with Photoshop, and editing videos for my YouTube channel in my leisure time. Here is one of my favorite photos that I edited a long time ago, me and my sister jumping on a cube of Jell-O.
-		</p>
+		<header>
+			<h1>Hung Ly</h1>
+			<img class = "img1" src="mypicture.jpeg" width="200" alt="Hung Ly">
+			<p><a href="https://www.linkedin.com/in/hung-ly-823201b5/">My LinkedIn</a> | 
+			<a href="https://github.com/kentleeme">My GitHub</a></p>
+		</header>
+		<div>
+			<p>
+			I am a senior Computer Science student of <span class="uh">University of Houston</span> - <span class="d">Downtown</span>. I am going to tell you the 3 things I love the most. One, I love to program, that is one of the reasons why I am taking this course for my last semester here in UHD. I love C++, Python, JavaScript, and programming in general. Thus, learning HTML5 and CSS should be exciting and fun. My goal is to have an application of my own in the future. Two, I also love Math. I am pretty good at working with numbers and when I was a kid, I always pictured myself becoming a math teacher when I grew up. Although, w it’s more like a shower thought but my love for Math still remains. Three, I love photo editing. I remember when I first owned an iPhone, I took a lot of pictures. Eventually, I learned how to edit pictures by using Photoshop from watching tutorials on YouTube. You can do infinite things with photoshop, all it takes is your imagination and creativity. I’ve also learned how to edit videos and post them on YouTube. In other words, I usually play with Photoshop, and editing videos for my YouTube channel in my leisure time. Here is one of my favorite photos that I edited a long time ago, me and my sister jumping on a cube of Jell-O.
+			</p>
+		</div>
 		<p>
 		<img src="before.jpg" height="300" alt="before"> 
 		<img src="after.jpg" height="300" alt="after">
 		</p>
-		<ul>
-			<li>Languages</li>
+		<div class = "flexbox">
+			<div>
+				Languages
 				<ol>
 					<li>English</li>
 					<li>Vietnamese</li>
 					<li>Cantonese</li>
 				</ol>
-			<li>Computer Languages</li>
+			</div>
+			<div>Computer Languages
 				<ol>
 					<li>C++</li>
 					<li>Python</li>
 					<li>JavaScript</li>
 					<li>HTML5/CSS</li>				
 				</ol>
-		</ul>
+			</div>
+		</div>
 		<p>Use this form below to send me a message</p>
 		<form method = "post" action = "http://www.facebook.com/kentleeme">
 			<p><label>Name:
 				<input name = "name" type = "text" size = "25"
-                  maxlength = "50">
-            </label></p>
+				  maxlength = "50">
+			</label></p>
 			<p><label>Email:
 				<input name = "name" type = "text" size = "25"
-                  maxlength = "50">
-            </label></p>
+				  maxlength = "50">
+			</label></p>
 			<p><label>Message:<br>
-            <textarea name = "comments"
-               rows = "4" cols = "36">Enter your message here.</textarea>
+			<textarea name = "comments"
+			   rows = "4" cols = "36">Enter your message here.</textarea>
 			</label></p>
 			<p>
 				<input type = "submit" value = "Send">
 				<input type = "reset" value = "Clear">
 			</p> 
 		</form>
-		
-		<p class = "text1">Before</p>
-		<p class = "text2">After</p>
 	</body>
 </html>
