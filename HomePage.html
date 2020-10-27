@@ -128,7 +128,12 @@
 			.viewallv:hover {background-color:#c9ffd0;}
 			.support {height:150px; width:300px; display:inline-block; text-align:center; margin:10px; overflow:hidden;
 						background-color:white; border-bottom: solid 4px lightgrey; text-decoration:none; color:#318f2f; padding-top:30px;}
-			#sporty:hover {content:url(pics/Luxury2.png)}
+			#sporty:hover {content:url("pics/Sportyhover.png");}
+			#standardc:hover {content:url("pics/standardcarhover.png");}
+			#truck:hover {content:url("pics/Pick-Up Truckhover.png"); }
+			#minivan:hover {content:url("pics/Minivanhover.png"); }
+			#standards:hover {content:url("pics/Standard SUVhover.png"); }
+			#luxc:hover {content:url("pics/Luxury2hover.png");}
 		</style>
 	</head>
 	<body>
@@ -136,10 +141,11 @@
 		<script>
 			//Get the button
 			var mybutton = document.getElementById("BTTbutton");
-			var menulist = ["<p><a class='sm' href='#rentnow'>> Start A Reservation</a></p><p><a class='sm' href='#'>> Reservation Status</a></p><p><a class='sm' href='#'>> Cancel Reservation</a></p>",
-			"<p><a class='sm' href='#rentnow'>> About Us</a></p><p><a class='sm' href='#'>> Meet The Team</a></p><p><a class='sm' href='#'>> Vehicles</a></p>",
-			"<p><a class='sm' href='#rentnow'>> Houston</a></p><p><a class='sm' href='#'>> Austin</a></p><p><a class='sm' href='#'>> Dallas</a></p>",
-			"<p><a class='sm' href='#rentnow'>> FAQs</a></p><p><a class='sm' href='#'>> Contact Us</a></p><p><a class='sm' href='#'>> Report An Issue</a></p>"
+			var menulist = ["<h1 style='color:white; font-size:30pt'>RENT YOUR FIRST CAR WITH CONFIDENCE</h1><p style='color:white; font-size:14pt'>Customer's satisfaction is our number one priority. We commit to provide the best service and protect the well-being of our customers and employees.</p>",
+			"<p><a class='sm' href='#rentnow'>> Start A Reservation</a></p><p><a class='sm' href='#'>> Reservation Status</a></p><p><a class='sm' href='#'>> Cancel Reservation</a></p>",
+			"<p><a class='sm' href='#'>> About Us</a></p><p><a class='sm' href='#'>> Meet The Team</a></p><p><a class='sm' href='#'>> Vehicles</a></p>",
+			"<p><a class='sm' href='#'>> Houston</a></p><p><a class='sm' href='#'>> Austin</a></p><p><a class='sm' href='#'>> Dallas</a></p>",
+			"<p><a class='sm' href='#'>> FAQs</a></p><p><a class='sm' href='#'>> Contact Us</a></p><p><a class='sm' href='#'>> Report An Issue</a></p>"
 			]
 			// When the user scrolls down 50px from the top of the document, show the button
 			window.onscroll = function() {scrollFunction()};
@@ -159,9 +165,14 @@
 			}
 			
 			function showsubmenu(index,picname) {
-				document.getElementById("submenuEXT").innerHTML = menulist[index];
-				//document.getElementById("submenuEXT").text-decoration = "none";
-				document.getElementById("bannerimage").src = picname;
+				if (document.getElementById("submenuEXT").innerHTML != menulist[index]){
+					document.getElementById("submenuEXT").innerHTML = menulist[index];
+					document.getElementById("bannerimage").src = picname;
+					}
+				else {
+					document.getElementById("submenuEXT").innerHTML = menulist[0];
+					document.getElementById("bannerimage").src = "pics/cars.jpg";
+					}
 				}
 		</script>
 		<header>
@@ -199,10 +210,10 @@
 		</header>
 		<div class="menu">
 			<div class="logo"><a href="HomePage.html"><img src="pics/logo.png" height="75"></a></div>
-			<div class="submenu" id="rent" onclick="showsubmenu(0,'pics/rent1.jpg')">RENT</div>
-			<div class="submenu" id="learn" onclick="showsubmenu(1,'pics/learn.jpg')">LEARN MORE</div>
-			<div class="submenu" id="location" onclick="showsubmenu(2,'pics/loc.jpg')">LOCATIONS</div>
-			<div class="submenu" id="help" onclick="showsubmenu(3,'pics/CSR.jpg')">CONTACT US</div>
+			<div class="submenu" id="rent" onclick="showsubmenu(1,'pics/rent1.jpg')">RENT</div>
+			<div class="submenu" id="learn" onclick="showsubmenu(2,'pics/learn.jpg')">LEARN MORE</div>
+			<div class="submenu" id="location" onclick="showsubmenu(3,'pics/loca.jpg')">LOCATIONS</div>
+			<div class="submenu" id="help" onclick="showsubmenu(4,'pics/CSRa.jpg')">CONTACT US</div>
 		</div>
 		<div class="banner">
 			<div class="txtholder" id="submenuEXT">
@@ -215,9 +226,9 @@
 		</div>
 		<div style="position:relative; overflow:hidden; text-align:center;">
 			<div style="display:inline-block; position:relative; max-width:400px;">
-				<img src="pics/standardcar.png" height="220" alt="Standard Car">
-				<img src="pics/Luxury2.png" height="220" alt="Luxury Car">
-				<img src="pics/Standard SUV.png" height="220" alt="Standard SUV">
+				<img id="standardc" src="pics/standardcar.png" height="220" alt="Standard Car">
+				<img id="luxc" src="pics/Luxury2.png" height="220" alt="Luxury Car">
+				<img id="standards" src="pics/Standard SUV.png" height="220" alt="Standard SUV">
 			</div>
 			<div class="rentform" id="rentnow">
 			<h1>Reserve A Vehicle Now</h1>
@@ -324,7 +335,7 @@
 					<h2>Zero Cancellation Fee</h2>
 				</div>
 				<div>
-					<img src="pics/learn2.jpg" alt="Learn" width="400" height="300">
+					<img src="pics/learn2a.jpg" alt="Learn" width="400" height="300">
 				</div>
 				<div style="text-align:left; min-height:5em; padding-left:10px; padding-right:10px;">
 					<p>Learn about our way of taking care of our customers, our communities, our employees and our environment.</p>
@@ -338,7 +349,7 @@
 					<h2>Plan Your Getaway Today</h2>
 				</div>
 				<div>
-					<img src="pics/rent2.jpg" alt="Learn" width="400" height="300">
+					<img src="pics/rent2a.jpg" alt="Learn" width="400" height="300">
 				</div>
 				<div style=" text-align:left; min-height:5em; padding-left:10px; padding-right:10px;">
 					<p>From SUVs to pick-up truck, wherever you go, we've got your ride.</p>
@@ -352,38 +363,38 @@
 					<h2>Need Help?</h2>
 				</div>
 				<div>
-					<img src="pics/help.jpg" alt="Learn" width="400" height="300">
+					<img src="pics/helpa.jpg" alt="Learn" width="400" height="300">
 				</div>
 				<div style="text-align:left; min-height:5em; padding-left:10px; padding-right:10px;">
 					<p>Whether you have a question, want to cancel your reservation or need help finding the right vehicle, we're here.</p>
 				</div>
 				<div style="text-align:center; margin-bottom:40px;">
-					<button class="learnbutton" onclick="location.href='https://www.google.com'"><strong>CONTACT US</strong></button>
+					<button class="learnbutton" onclick="location.href='#'"><strong>CONTACT US</strong></button>
 				</div>
 			</div>
 		</div>
 		<div style="text-align:center; height:250px; vertical-align:middle;">
 			<a href="#">
 			<div class="support">
-				<div><img src="pics/dealicon.png" alt="deal icon" height="40"></div>
+				<div><img src="pics/dealicon2.png" alt="deal icon" height="40"></div>
 				<div style="height:2em"><strong>Promotions</strong></div>
 				<div style="height:4em">Check out our current deals and promotions to save even more.</div>
 			</div></a>
 			<a href="#">
 			<div class="support">
-				<div><img src="pics/qnaicon.png" alt="Q&A icon" height="40"></div>
+				<div><img src="pics/qnaicon2.png" alt="Q&A icon" height="40"></div>
 				<div style="height:2em"><strong>FAQs</strong></div>
 				<div style="height:4em">See the answers to the most common questions.</div>
 			</div></a>
 			<a href="#">
 			<div class="support">
-				<div><img src="pics/emailicon.png" alt="email icon" height="40"></div>
+				<div><img src="pics/emailicon2.png" alt="email icon" height="40"></div>
 				<div style="height:2em"><strong>Email</strong></div>
 				<div style="height:4em">Send us an E-mail if you have any question or concern.</div>
 			</div></a>
 			<a href="#">
 			<div class="support">
-				<div><img src="pics/callicon.png" alt="call icon" height="40"></div>
+				<div><img src="pics/callicon2.png" alt="call icon" height="40"></div>
 				<div style="height:2em"><strong>Call</strong></div>
 				<div style="height:4em">Call us now for immediate support. (800)CAR-RENT</div>
 			</div></a>
