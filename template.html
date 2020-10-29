@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- Written by Hung Ly -->
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<link rel="icon" href="pics/minilogo.png">
+		<title>Rental Cars at Affordable Rates</title>
+		<link rel = "stylesheet" type = "text/css" href = "style.css">
+		<style type="text/css"> 
+			.banner {display:none;}
+		</style>
+	</head>
+	<body>
+		<button onclick="topFunction()" id="BTTbutton" title="Go to top"></button>
+		<script>
+			//Get the button
+			var mybutton = document.getElementById("BTTbutton");
+			var menulist = ["<h1 style='color:white; font-size:30pt'>RENT YOUR FIRST CAR WITH CONFIDENCE</h1><p style='color:white; font-size:14pt'>Customer's satisfaction is our number one priority. We commit to provide the best service and protect the well-being of our customers and employees.</p>",
+			"<p><a class='sm' href='#rentnow'>> Start A Reservation</a></p><p><a class='sm' href='#'>> Reservation Status</a></p><p><a class='sm' href='#'>> Cancel Reservation</a></p>",
+			"<p><a class='sm' href='AboutUs.html'>> About Us</a></p><p><a class='sm' href='#'>> Meet The Team</a></p><p><a class='sm' href='#'>> Vehicles</a></p>",
+			"<p><a class='sm' href='#'>> Houston</a></p><p><a class='sm' href='#'>> Austin</a></p><p><a class='sm' href='#'>> Dallas</a></p>",
+			"<p><a class='sm' href='#'>> FAQs</a></p><p><a class='sm' href='#'>> Contact Us</a></p><p><a class='sm' href='#'>> Report An Issue</a></p>"
+			]
+			// When the user scrolls down 50px from the top of the document, show the button
+			window.onscroll = function() {scrollFunction()};
+
+			function scrollFunction() {
+			  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+				mybutton.style.display = "block";
+			  } else {
+				mybutton.style.display = "none";
+			  }
+			}
+
+			// When the user clicks on the button, scroll to the top of the document
+			function topFunction() {
+			  document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			}
+			
+			function showsubmenu(index,picname) {
+				document.getElementById("bannercontainer").style.display = "block";
+				document.getElementById("submenuEXT").innerHTML = menulist[index];
+				document.getElementById("bannerimage").src = picname;
+			}
+		</script>
+		<header>
+			<div class="navbar">
+				<a class="header" href="covid.html">Covid19 Update⚠</a>
+				<div class="dropdown">
+					<button class="dropbtn">User 
+					  <i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+					  <a class="usr" href="#">Sign In</a>
+					  <a class="usr" href="#">Sign Up</a>
+					</div>
+				</div> 
+				<div class="dropdown">
+					<button class="dropbtn">Currency 
+					  <i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+					  <a href="#">USD ($)</a>
+					  <a href="#">CAD ($)</a>
+					  <a href="#">EUR (€)</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Language 
+					  <i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+					  <a href="#">English</a>
+					  <a href="#">Español</a>
+					</div>
+				</div> 
+			</div>
+		</header>
+		<div class="menu">
+			<div class="logo"><a href="HomePage.html"><img src="pics/logo.png" height="75"></a></div>
+			<div class="submenu" id="rent" onclick="showsubmenu(1,'pics/rent1.jpg')">RENT</div>
+			<div class="submenu" id="learn" onclick="showsubmenu(2,'pics/learn.jpg')">LEARN MORE</div>
+			<div class="submenu" id="location" onclick="showsubmenu(3,'pics/loca.jpg')">LOCATIONS</div>
+			<div class="submenu" id="help" onclick="showsubmenu(4,'pics/CSRa.jpg')">CONTACT US</div>
+		</div>
+		<div class="banner" id="bannercontainer">
+			<div class="txtholder" id="submenuEXT">
+				<h1 style="color:white; font-size:30pt">RENT YOUR FIRST CAR WITH CONFIDENCE</h1>
+				<p style="color:white; font-size:14pt">Customer's satisfaction is our number one priority. We commit to provide the best service and protect the well-being of our customers and employees.</p>
+			</div>
+			<div style="display:inline-block;overflow:hidden;float:right; max-height:400px;">
+				<img id="bannerimage" src="pics/cars.jpg" height="400" alt="cars">
+			</div>
+		</div>
+		<div style="margin:50px; font-size:14pt;">
+			<h1>About Car4Rent</h1>
+			<p>Car4Rent is an ongoing American success story. Our guiding principles, and humble beginning, 
+			revolve around personal honesty and integrity. We believe in strengthening our communities one neighborhood at a time, 
+			serving our customers as if they were our family, and rewarding hard work. 
+			These things are as true today as they were when we were founded in 2020.</p>
+
+			<p>In the future, the increase of network means Car4Rent will become the largest transportation solutions provider. 
+			We offer car and truck rentals, as well as car sharing and car sales. 
+			We're there when you need us with over 1,000 locations within Texas.</p>
+
+			<p>We take an active role in sustainability, not only because it’s smart for our business, 
+			but because we believe in making the world a better place for future generations. 
+			Because of our size, we are in a unique position to foster innovation, 
+			advance research and test market-driven solutions.</p>
+		</div>
+		<footer>
+			<div>
+				<img style="max-width:100%;max-height:100%;" width="1500" src="pics/highway.jpg">
+			</div>
+			<div style="margin:20px; text-align:center;">
+				<img src="pics/logo.png" height="100">&copy
+			</div>
+		</footer>
+	</body>
+</html>
