@@ -113,14 +113,14 @@
 							-o-column-gap: 10px; 
 							column-gap: 10px;}
 			.rentbutton {color:white; background-color:#51b54c; height:55px; width:200px;}
-			.rentbutton:hover {text-shadow:2px 2px 2px black; background-color:#318f2f;}
+			.rentbutton:hover {text-shadow:2px 2px 2px black; background-color:#318f2f; cursor:pointer;}
 			.learnbutton {color:white; background-color:#51b54c; height:55px; width:200px;}
 			.learnbutton:hover {text-shadow:2px 2px 2px black; background-color:#318f2f;}
 			#loc {height:30px; font-size:14pt; border: solid 1px lightgrey; border-radius:2px; padding-left:10px;}
 			#age {height:30px; font-size:14pt; border: solid 1px lightgrey; border-radius:2px; padding-left:10px;}
 			#pickup {height:30px; width:200px; font-size:10pt; border: solid 1px lightgrey; border-radius:2px;}
 			#return {height:30px; width:200px; font-size:10pt; border: solid 1px lightgrey; border-radius:2px;}
-			.banner {height:400px; background-color:#07470f;}
+			.banner {height:400px; background-color:#07470f; display:none;}
 			.txtholder {max-height:400px; display:inline-block; padding-top:50px; float:left;
 						text-align:center; max-width:650px; overflow:hidden; text-align:left; padding-left:100px;}
 			.viewallv {border:solid 3px green; width:30px; height:160px; background-color:transparent;
@@ -141,12 +141,7 @@
 		<script>
 			//Get the button
 			var mybutton = document.getElementById("BTTbutton");
-			var menulist = ["<h1 style='color:white; font-size:30pt'>RENT YOUR FIRST CAR WITH CONFIDENCE</h1><p style='color:white; font-size:14pt'>Customer's satisfaction is our number one priority. We commit to provide the best service and protect the well-being of our customers and employees.</p>",
-			"<p><a class='sm' href='#rentnow'>> Start A Reservation</a></p><p><a class='sm' href='#'>> Reservation Status</a></p><p><a class='sm' href='#'>> Cancel Reservation</a></p>",
-			"<p><a class='sm' href='AboutUs.html'>> About Us</a></p><p><a class='sm' href='#'>> Meet The Team</a></p><p><a class='sm' href='#'>> Vehicles</a></p>",
-			"<p><a class='sm' href='#'>> Houston</a></p><p><a class='sm' href='#'>> Austin</a></p><p><a class='sm' href='#'>> Dallas</a></p>",
-			"<p><a class='sm' href='#'>> FAQs</a></p><p><a class='sm' href='#'>> Contact Us</a></p><p><a class='sm' href='#'>> Report An Issue</a></p>"
-			]
+			
 			// When the user scrolls down 50px from the top of the document, show the button
 			window.onscroll = function() {scrollFunction()};
 
@@ -164,16 +159,56 @@
 			  document.documentElement.scrollTop = 0;
 			}
 			
-			function showsubmenu(index,picname) {
-				if (document.getElementById("submenuEXT").innerHTML != menulist[index]){
-					document.getElementById("submenuEXT").innerHTML = menulist[index];
-					document.getElementById("bannerimage").src = picname;
-					}
-				else {
-					document.getElementById("submenuEXT").innerHTML = menulist[0];
-					document.getElementById("bannerimage").src = "pics/cars.jpg";
-					}
+			function showsubmenu(divname) {
+				switch(divname){
+					case "rent":
+						if (document.getElementById(divname).style.display == "block"){						
+							document.getElementById(divname).style.display = "none";
+							document.getElementById("defaultbanner").style.display = "block"}
+						else {
+							document.getElementById(divname).style.display = "block";
+							document.getElementById("learn").style.display = "none";
+							document.getElementById("location").style.display = "none";
+							document.getElementById("help").style.display = "none";
+							document.getElementById("defaultbanner").style.display = "none";}
+						break;
+					case "learn":
+						if (document.getElementById(divname).style.display == "block"){						
+							document.getElementById(divname).style.display = "none";
+							document.getElementById("defaultbanner").style.display = "block"}
+						else {
+							document.getElementById(divname).style.display = "block";
+							document.getElementById("rent").style.display = "none";
+							document.getElementById("location").style.display = "none";
+							document.getElementById("help").style.display = "none";
+							document.getElementById("defaultbanner").style.display = "none";}
+						break;
+					case "location":
+						if (document.getElementById(divname).style.display == "block"){						
+							document.getElementById(divname).style.display = "none";
+							document.getElementById("defaultbanner").style.display = "block"}
+						else {
+							document.getElementById(divname).style.display = "block";
+							document.getElementById("learn").style.display = "none";
+							document.getElementById("rent").style.display = "none";
+							document.getElementById("help").style.display = "none";
+							document.getElementById("defaultbanner").style.display = "none";}
+						break;
+					case "help":
+						if (document.getElementById(divname).style.display == "block"){						
+							document.getElementById(divname).style.display = "none";
+							document.getElementById("defaultbanner").style.display = "block"}
+						else {
+							document.getElementById(divname).style.display = "block";
+							document.getElementById("learn").style.display = "none";
+							document.getElementById("location").style.display = "none";
+							document.getElementById("rent").style.display = "none";
+							document.getElementById("defaultbanner").style.display = "none";}
+						break;
+					default:
+						break;
 				}
+			}
 		</script>
 		<header>
 			<div class="navbar">
@@ -210,18 +245,58 @@
 		</header>
 		<div class="menu">
 			<div class="logo"><a href="HomePage.html"><img src="pics/logo.png" height="75"></a></div>
-			<div class="submenu" id="rent" onclick="showsubmenu(1,'pics/rent1.jpg')">RENT</div>
-			<div class="submenu" id="learn" onclick="showsubmenu(2,'pics/learn.jpg')">LEARN MORE</div>
-			<div class="submenu" id="location" onclick="showsubmenu(3,'pics/loca.jpg')">LOCATIONS</div>
-			<div class="submenu" id="help" onclick="showsubmenu(4,'pics/CSRa.jpg')">CONTACT US</div>
+			<div class="submenu" onclick="showsubmenu('rent')">RENT</div>
+			<div class="submenu" onclick="showsubmenu('learn')">LEARN MORE</div>
+			<div class="submenu" onclick="showsubmenu('location')">LOCATIONS</div>
+			<div class="submenu" onclick="showsubmenu('help')">CONTACT US</div>
 		</div>
-		<div class="banner">
-			<div class="txtholder" id="submenuEXT">
+		<div class="banner" id="defaultbanner" style="display:block;">
+			<div class="txtholder">
 				<h1 style="color:white; font-size:30pt">RENT YOUR FIRST CAR WITH CONFIDENCE</h1>
 				<p style="color:white; font-size:14pt">Customer's satisfaction is our number one priority. We commit to provide the best service and protect the well-being of our customers and employees.</p>
 			</div>
 			<div style="display:inline-block;overflow:hidden;float:right; max-height:400px;">
 				<img id="bannerimage" src="pics/cars.jpg" height="400" alt="cars">
+			</div>
+		</div>
+		<div class="banner" id="rent">
+			<div class="txtholder">
+				<p><a class='sm' href='#rentnow'>> Start A Reservation</a></p>
+				<p><a class='sm' href='#'>> Reservation Status</a></p>
+				<p><a class='sm' href='#'>> Cancel Reservation</a></p>
+			</div>
+			<div style="display:inline-block;overflow:hidden;float:right; max-height:400px;">
+				<img id="bannerimage" src="pics/rent1.jpg" height="400" alt="cars">
+			</div>
+		</div>
+		<div class="banner" id="learn">
+			<div class="txtholder">
+				<p><a class='sm' href='AboutUs.html'>> About Us</a></p>
+				<p><a class='sm' href='MeetTheTeam.html'>> Meet The Team</a></p>
+				<p><a class='sm' href='#'>> Vehicles</a></p>
+			</div>
+			<div style="display:inline-block;overflow:hidden;float:right; max-height:400px;">
+				<img id="bannerimage" src="pics/learn.jpg" height="400" alt="cars">
+			</div>
+		</div>
+		<div class="banner" id="location">
+			<div class="txtholder">
+				<p><a class='sm' href='#'>> Houston</a></p>
+				<p><a class='sm' href='#'>> Austin</a></p>
+				<p><a class='sm' href='#'>> Dallas</a></p>
+			</div>
+			<div style="display:inline-block;overflow:hidden;float:right; max-height:400px;">
+				<img id="bannerimage" src="pics/loca.jpg" height="400" alt="cars">
+			</div>
+		</div>
+		<div class="banner" id="help">
+			<div class="txtholder">
+				<p><a class='sm' href='#'>> FAQs</a></p>
+				<p><a class='sm' href='#'>> Contact Us</a></p>
+				<p><a class='sm' href='#'>> Report An Issue</a></p>
+			</div>
+			<div style="display:inline-block;overflow:hidden;float:right; max-height:400px;">
+				<img id="bannerimage" src="pics/CSRa.jpg" height="400" alt="cars">
 			</div>
 		</div>
 		<div style="position:relative; overflow:hidden; text-align:center;">

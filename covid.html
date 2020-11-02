@@ -15,12 +15,7 @@
 		<script>
 			//Get the button
 			var mybutton = document.getElementById("BTTbutton");
-			var menulist = ["<h1 style='color:white; font-size:30pt'>RENT YOUR FIRST CAR WITH CONFIDENCE</h1><p style='color:white; font-size:14pt'>Customer's satisfaction is our number one priority. We commit to provide the best service and protect the well-being of our customers and employees.</p>",
-			"<p><a class='sm' href='#rentnow'>> Start A Reservation</a></p><p><a class='sm' href='#'>> Reservation Status</a></p><p><a class='sm' href='#'>> Cancel Reservation</a></p>",
-			"<p><a class='sm' href='AboutUs.html'>> About Us</a></p><p><a class='sm' href='#'>> Meet The Team</a></p><p><a class='sm' href='#'>> Vehicles</a></p>",
-			"<p><a class='sm' href='#'>> Houston</a></p><p><a class='sm' href='#'>> Austin</a></p><p><a class='sm' href='#'>> Dallas</a></p>",
-			"<p><a class='sm' href='#'>> FAQs</a></p><p><a class='sm' href='#'>> Contact Us</a></p><p><a class='sm' href='#'>> Report An Issue</a></p>"
-			]
+			
 			// When the user scrolls down 50px from the top of the document, show the button
 			window.onscroll = function() {scrollFunction()};
 
@@ -38,10 +33,47 @@
 			  document.documentElement.scrollTop = 0;
 			}
 			
-			function showsubmenu(index,picname) {
-				document.getElementById("bannercontainer").style.display = "block";
-				document.getElementById("submenuEXT").innerHTML = menulist[index];
-				document.getElementById("bannerimage").src = picname;
+			function showsubmenu(divname) {
+				switch(divname){
+					case "rent":
+						if (document.getElementById(divname).style.display == "block")
+							document.getElementById(divname).style.display = "none";
+						else {
+							document.getElementById(divname).style.display = "block";
+							document.getElementById("learn").style.display = "none";
+							document.getElementById("location").style.display = "none";
+							document.getElementById("help").style.display = "none";}
+						break;
+					case "learn":
+						if (document.getElementById(divname).style.display == "block")
+							document.getElementById(divname).style.display = "none";
+						else {
+						document.getElementById(divname).style.display = "block";
+						document.getElementById("rent").style.display = "none";
+						document.getElementById("location").style.display = "none";
+						document.getElementById("help").style.display = "none";}
+						break;
+					case "location":
+						if (document.getElementById(divname).style.display == "block")
+							document.getElementById(divname).style.display = "none";
+						else {
+						document.getElementById(divname).style.display = "block";
+						document.getElementById("learn").style.display = "none";
+						document.getElementById("rent").style.display = "none";
+						document.getElementById("help").style.display = "none";}
+						break;
+					case "help":
+						if (document.getElementById(divname).style.display == "block")
+							document.getElementById(divname).style.display = "none";
+						else {
+						document.getElementById(divname).style.display = "block";
+						document.getElementById("learn").style.display = "none";
+						document.getElementById("location").style.display = "none";
+						document.getElementById("rent").style.display = "none";}
+						break;
+					default:
+						break;
+				}
 			}
 		</script>
 		<header>
@@ -79,10 +111,10 @@
 		</header>
 		<div class="menu">
 			<div class="logo"><a href="HomePage.html"><img src="pics/logo.png" height="75"></a></div>
-			<div class="submenu" id="rent" onclick="showsubmenu(1,'pics/rent1.jpg')">RENT</div>
-			<div class="submenu" id="learn" onclick="showsubmenu(2,'pics/learn.jpg')">LEARN MORE</div>
-			<div class="submenu" id="location" onclick="showsubmenu(3,'pics/loca.jpg')">LOCATIONS</div>
-			<div class="submenu" id="help" onclick="showsubmenu(4,'pics/CSRa.jpg')">CONTACT US</div>
+			<div class="submenu" onclick="showsubmenu('rent')">RENT</div>
+			<div class="submenu" onclick="showsubmenu('learn')">LEARN MORE</div>
+			<div class="submenu" onclick="showsubmenu('location')">LOCATIONS</div>
+			<div class="submenu" onclick="showsubmenu('help')">CONTACT US</div>
 		</div>
 		<div class="banner" id="bannercontainer">
 			<div class="txtholder" id="submenuEXT">
@@ -91,6 +123,46 @@
 			</div>
 			<div style="display:inline-block;overflow:hidden;float:right; max-height:400px;">
 				<img id="bannerimage" src="pics/cars.jpg" height="400" alt="cars">
+			</div>
+		</div>
+		<div class="banner" id="rent">
+			<div class="txtholder">
+				<p><a class='sm' href='#rentnow'>> Start A Reservation</a></p>
+				<p><a class='sm' href='#'>> Reservation Status</a></p>
+				<p><a class='sm' href='#'>> Cancel Reservation</a></p>
+			</div>
+			<div style="display:inline-block;overflow:hidden;float:right; max-height:400px;">
+				<img id="bannerimage" src="pics/rent1.jpg" height="400" alt="cars">
+			</div>
+		</div>
+		<div class="banner" id="learn">
+			<div class="txtholder">
+				<p><a class='sm' href='AboutUs.html'>> About Us</a></p>
+				<p><a class='sm' href='MeetTheTeam.html'>> Meet The Team</a></p>
+				<p><a class='sm' href='#'>> Vehicles</a></p>
+			</div>
+			<div style="display:inline-block;overflow:hidden;float:right; max-height:400px;">
+				<img id="bannerimage" src="pics/learn.jpg" height="400" alt="cars">
+			</div>
+		</div>
+		<div class="banner" id="location">
+			<div class="txtholder">
+				<p><a class='sm' href='#'>> Houston</a></p>
+				<p><a class='sm' href='#'>> Austin</a></p>
+				<p><a class='sm' href='#'>> Dallas</a></p>
+			</div>
+			<div style="display:inline-block;overflow:hidden;float:right; max-height:400px;">
+				<img id="bannerimage" src="pics/loca.jpg" height="400" alt="cars">
+			</div>
+		</div>
+		<div class="banner" id="help">
+			<div class="txtholder">
+				<p><a class='sm' href='#'>> FAQs</a></p>
+				<p><a class='sm' href='#'>> Contact Us</a></p>
+				<p><a class='sm' href='#'>> Report An Issue</a></p>
+			</div>
+			<div style="display:inline-block;overflow:hidden;float:right; max-height:400px;">
+				<img id="bannerimage" src="pics/CSRa.jpg" height="400" alt="cars">
 			</div>
 		</div>
 		<div style="margin:50px; font-size:14pt;">
