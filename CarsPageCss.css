@@ -1,0 +1,105 @@
+.container {
+  display: table;
+  width: 100%;
+}
+.left-half {
+  background-color: #ffffff;
+  position: absolute;
+  left: 0px;
+  width: 20%;
+}
+
+.right-half {
+  background-color: #ffffff;
+  position: absolute;
+  right: 0px;
+  width: 80%;
+}
+
+/* This is for Nav bar   */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(51, 51, 51);
+}
+
+li {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #ff6767;
+}
+
+/* This is for Product card   */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+.msrp {
+  color: black;
+  font-size: 15px;
+}
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+.desc {
+  font-size: 15px;
+}
+.ItemTitle {
+  font-size: 30px;
+}
+
+/*grid*/
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 20px 50px;
+
+  padding: 10px;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
