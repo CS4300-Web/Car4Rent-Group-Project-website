@@ -1,0 +1,43 @@
+/*table*/
+table{
+    width: 100%;
+}
+
+.section {
+    margin: 50px auto;
+}
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.rateTable{
+    width: 100%;
+    font-weight: 300;
+    font-size: 120%;
+    text-align: center;
+}
+.rateTable h2{
+    text-transform: uppercase;
+    font-size: 150%;
+    margin-bottom: 15px;
+}
+.rateTable tr td,
+.rateTable tr th{
+    padding: 12px;
+    width: ;
+    border-bottom: 2px solid #888;
+
+}
+
+.rateTable table tr{
+    cursor: pointer;
+    background-color: #fff;
+    -webkit-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+}
+.rateTable table tr:hover{
+    cursor: pointer;
+    background-color: #d6ffe1;
+}

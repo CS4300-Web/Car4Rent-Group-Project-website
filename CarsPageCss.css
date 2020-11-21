@@ -72,10 +72,10 @@ li a:hover:not(.active) {
   outline: 0;
   padding: 12px;
   color: white;
-  background-color: #000;
+  background-color: #42c972;
   text-align: center;
   cursor: pointer;
-  width: 100%;
+  width: 75%;
   font-size: 18px;
 }
 
@@ -86,7 +86,7 @@ li a:hover:not(.active) {
   font-size: 15px;
 }
 .ItemTitle {
-  font-size: 30px;
+  font-size: 24px;
 }
 
 /*grid*/
@@ -94,7 +94,6 @@ li a:hover:not(.active) {
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-gap: 20px 50px;
-
   padding: 10px;
 }
 
