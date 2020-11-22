@@ -126,3 +126,28 @@ a.sm:hover {color: white;}
 #minivan:hover {content:url("pics/Minivanhover.png"); }
 #standards:hover {content:url("pics/Standard SUVhover.png"); }
 #luxc:hover {content:url("pics/Luxury2hover.png");}
+.priceText{
+    width: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.priceText p{
+	text-align:center;
+    font-weight: 300;
+    font-size: 150%;
+    color: #fff;
+    line-height: 150%;
+    padding: 20px;
+    background-color: rgba( 255, 255, 255, 0.3);
+}
+.divider2{
+	width:100%;
+    height: 80vh;
+    background-image: linear-gradient(rgba( 0, 0, 0, 0.3), rgba( 0, 0, 0, 0.3 )), url(pics/highway.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
