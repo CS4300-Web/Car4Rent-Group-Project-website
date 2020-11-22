@@ -70,10 +70,23 @@
 						document.getElementById("learn").style.display = "none";
 						document.getElementById("location").style.display = "none";
 						document.getElementById("rent").style.display = "none";}
-						break;
+						break;					
 					default:
 						break;
 				}
+			}
+			
+			function showanswer(q,divname) {
+				if (document.getElementById(divname).style.display == "block")
+					{
+					document.getElementById(divname).style.display = "none";
+					document.getElementById(q).style.color = "black";
+					}
+				else 
+					{
+					document.getElementById(divname).style.display = "block";
+					document.getElementById(q).style.color = "red";
+					}
 			}
 		</script>
 		<header>
@@ -157,9 +170,9 @@
 		</div>
 		<div class="banner" id="help">
 			<div class="txtholder">
-				<p><a class='sm' href='#'>> FAQs</a></p>
-				<p><a class='sm' href='#'>> Contact Us</a></p>
-				<p><a class='sm' href='#'>> Report An Issue</a></p>
+				<p><a class='sm' href='FAQ.html'>> FAQs</a></p>
+				<p><a class='sm' href='ContactUs.html'>> Contact Us</a></p>
+				<p><a class='sm' href='Report.html'>> Report An Issue</a></p>
 			</div>
 			<div style="display:inline-block;overflow:hidden;float:right; max-height:400px;">
 				<img id="bannerimage" src="pics/CSRa.jpg" height="400" alt="cars">
@@ -167,21 +180,87 @@
 		</div>
 		<!--Insert your BODY HERE!!!-->
 		<!--------------------------------------------------------------------->
+		<div style="margin:50px; font-size:14pt; border-bottom:5px solid darkgray;">
+			<nav style="margin-bottom:10px;">
+				<a class="header" style="float:none;color:#00361d" href="FAQ.html">FAQs</a> |
+				<a class="header" style="float:none;color:#00361d" href="ContactUs.html">Contact Us</a> |
+				<a class="header" style="float:none;color:#00361d" href="Report.html">Report An Issue</a>
+			</nav>
+			
+		</div>
 		<div style="margin:50px; font-size:14pt;">
-			<h1>About Car4Rent</h1>
-			<p>Car4Rent is an ongoing American success story. Our guiding principles, and humble beginning, 
-			revolve around personal honesty and integrity. We believe in strengthening our communities one neighborhood at a time, 
-			serving our customers as if they were our family, and rewarding hard work. 
-			These things are as true today as they were when we were founded in 2020.</p>
+			<h2>Frequently Asked Questions (FAQs)</h2>
+			<p class='faq' id='Q1' onclick="showanswer('Q1','q1')">What are the driver license requirements for renting?</p>
+			<div id='q1' class='answers'>
+				<p>Customers who reside in the United States, U.S. Territories, or Canada must present a valid, 
+				unexpired government-issued driver's license which includes a photograph of the customer. 
+				Digital licenses are not accepted. The driver's license must be valid for the entire rental period.</p>
 
-			<p>In the future, the increase of network means Car4Rent will become the largest transportation solutions provider. 
-			We offer car and truck rentals, as well as car sharing and car sales. 
-			We're there when you need us with over 1,000 locations within Texas.</p>
-
-			<p>We take an active role in sustainability, not only because it’s smart for our business, 
-			but because we believe in making the world a better place for future generations. 
-			Because of our size, we are in a unique position to foster innovation, 
-			advance research and test market-driven solutions.</p>
+				<p>Members of the United States Armed Forces who are on active duty may present an 
+				expired home state license under the following conditions:</p>
+				<ul>
+					<li>They also present an Active Military ID, and</li>
+					<li>They are in compliance with their military extension policy of the state which issued the license. 
+					These policies vary by state and customers are encouraged to check with the appropriate department 
+					of motor vehicles for more information.</li>
+				</ul>
+			</div>
+			<p class='faq' id='Q2' onclick="showanswer('Q2','q2')">What are the age requirements for renting?</p>
+			<div id='q2' class='answers'>The minimum age to rent a vehicle is 21 years of age. There is no maximum age restriction in the United States.
+			</div>
+			<p class='faq' id='Q3' onclick="showanswer('Q3','q3')">How do I change or cancel my reservation?</p>
+			<div id='q3' class='answers'>
+				<p>If you have already picked up your vehicle and wish to keep it longer; 
+				you must contact the location where you picked up the vehicle.</p>
+				<p>If you have not picked up your vehicle you can view, modify, 
+				or cancel your reservation by clicking here. When visiting this page, 
+				you will need to make sure all fields are filled out. If you fail to enter in your confirmation number,
+				first name, and last name -- the reservation will not be found. If you have entered in all this 
+				information correctly and still cannot modify your reservation, please contact us.</p>
+				<p>If you fail to pick up your prepaid rental on the specified pick-up date, 
+				you will receive a full refund minus a no show fee of USD $100</p>
+			</div>
+			<p class='faq' id='Q4' onclick="showanswer('Q4','q4')">How much is a rental car?</p>
+			<div id='q4' class='answers'>The cost of a rental car depends on many factors and can vary greatly. These factors include:
+				<ul>
+					<li>The length of time you are renting the car</li>
+					<li>Car class selected</li>
+					<li>Rental location</li>
+					<li>Insurance products</li>
+					<li>Additional products selected</li>
+				</ul>
+			</div>
+			<p class='faq' id='Q5' onclick="showanswer('Q5','q5')">What is your pet policy?</p>
+			<div id='q5' class='answers'>Pets are allowed in rental vehicles. Customers need to keep pets crated 
+			and return their rental car in clean condition and free of pet hair to avoid cleaning/detailing fees. 
+			Service animals used by customers with disabilities are allowed in the vehicle without a carrier.
+			</div>
+			<p class='faq' id='Q6' onclick="showanswer('Q6','q6')">Do you offer any discounts or promotions?</p>
+			<div id='q6' class='answers'>Car4Rent offers special promotions throughout the year. 
+				Click <a href="https://www.google.com">here</a> to check out our current promotions.
+			</div>
+			<p class='faq' id='Q7' onclick="showanswer('Q7','q7')">Does Car4Rent offer a military discount?</p>
+			<div id='q7' class='answers'>We are proud to have a relationship with organizations that support the military community like USAA and the VFW. 
+			In addition, we have a presence on military bases across the U.S. 
+			</div>
+			<p class='faq' id='Q8' onclick="showanswer('Q8','q8')">Is personal auto insurance required when renting a car?</p>
+			<div id='q8' class='answers'>You do not need your own car insurance in order to rent from Car4Rent. We do offer several different types 
+			of insurance plans to protect you in the event of an accident. See link below for details.  
+			</div>
+			<p class='faq' id='Q9' onclick="showanswer('Q9','q9')">How much is car rental insurance?</p>
+			<div id='q9' class='answers'>The cost of optional car rental insurance and protection products can vary based on the type of vehicle you 
+			wish to rent and a number of other factors. To get the most accurate pricing, start a car reservation below or call the Car4Rent branch from which you wish to rent. 
+			</div>
+			<p class='faq' id='Q10' onclick="showanswer('Q10','q10')">What should I do if I get in an accident in a rental car?</p>
+			<div id='q10' class='answers'>
+				<p>If you get into an auto accident in your rental car, the first thing you do is call the police 
+				and file a police report. You should then call the Car4Rent branch from which you rented and provide 
+				information on the accident. Our staff will walk you through the next steps. </p>
+				<p>If you happen to get into a rental car accident when the Car4Rent branch is not open, 
+				you can call roadside assitance, which is available 24 hours a day. 
+				We recommend calling the branch as soon as possible during business hours. 
+				Many of our airport locations are open 24/7.</p>
+			</div>
 		</div>
 		<!--------------------------------------------------------------------->
 		<footer>

@@ -43,6 +43,7 @@ a.header {color: white;
 		text-decoration: none}
 a.header:hover {color: white;
 		text-decoration: underline;}
+p.faq:hover {text-decoration: underline dotted black; cursor:pointer;}
 a.usr {color: black;
 		text-decoration: none}
 a.usr:hover {color: black;
@@ -126,6 +127,11 @@ a.sm:hover {color: white;}
 #minivan:hover {content:url("pics/Minivanhover.png"); }
 #standards:hover {content:url("pics/Standard SUVhover.png"); }
 #luxc:hover {content:url("pics/Luxury2hover.png");}
+.answers {	display:none; font-size:12pt; 
+			border-left:solid 2px black; 
+			border-right:solid 2px black;
+			padding-left:20px;
+			padding-right:20px;}
 .priceText{
     width: 100%;
     position: relative;
