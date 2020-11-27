@@ -4,11 +4,10 @@
 	<head>
 		<meta charset = "utf-8">
 		<link rel="icon" href="pics/minilogo.png">
-		<title>Car4Rate | About Us</title>
+		<title>Car4Rent | Review Reservation</title>
 		<link rel = "stylesheet" type = "text/css" href = "style.css">
 		<style type="text/css"> 
 			.banner {display:none;}
-			.centered {position:absolute; left:50%; top:50%; transform: translate(-50%,-50%); padding:10px;}
 		</style>
 	</head>
 	<body>
@@ -166,29 +165,45 @@
 				<img id="bannerimage" src="pics/CSRa.jpg" height="400" alt="cars">
 			</div>
 		</div>
-		<div style="margin:50px; font-size:14pt;">
-			<h1>About Car4Rent</h1>
-			<p>Car4Rent is an ongoing American success story. Our guiding principles, and humble beginning, 
-			revolve around personal honesty and integrity. We believe in strengthening our communities one neighborhood at a time, 
-			serving our customers as if they were our family, and rewarding hard work. 
-			These things are as true today as they were when we were founded in 2020.</p>
-
-			<p>In the future, the increase of network means Car4Rent will become the largest transportation solutions provider. 
-			We offer car and truck rentals, as well as car sharing and car sales. 
-			We're there when you need us with over 1,000 locations within Texas.</p>
-
-			<p>We take an active role in sustainability, not only because it’s smart for our business, 
-			but because we believe in making the world a better place for future generations. 
-			Because of our size, we are in a unique position to foster innovation, 
-			advance research and test market-driven solutions.</p>
-		</div>		
-		
-		<div class="divider2">
-			<div class="priceText">
-				<p>We guarantee our prices are the lowest, most affordable you can find. We're unbeatable!</p>
-			</div>
+		<!--Insert your BODY HERE!!!-->
+		<!--------------------------------------------------------------------->
+		<div style="margin:50px; font-size:14pt; border-bottom:5px solid darkgray;">
+			<nav style="margin-bottom:10px;">
+				<a class="header" style="float:none;color:#00361d" href="Booking.html">Check Availability</a> >
+				<a class="header" style="float:none;color:#00361d" href="SelectLocation.php">Select A Location</a> >
+				<a class="header" style="float:none;color:#00361d" href="SelectVehicle.php">Select A Vehicle</a> >
+				<span class="header" style="float:none;color:#00361d;background-color:yellow">Review & Submit</span>
+			</nav>
 		</div>
-		
+		<div style="margin:50px;">
+			<?php
+				error_reporting(E_ALL ^ E_WARNING); 
+				$fname = $_POST['fname'];
+				$lname = $_POST['lname'];
+				$email = $_POST['email'];
+				$tel = $_POST['tel'];
+				$put = $_POST['put'];
+				$rt = $_POST['rt'];
+				$loc = $_POST['loc'];
+				foreach ($_POST as $veh) {
+					if (array_key_exists ('submit', $veh)) {
+						$carname = $veh['name'];
+						$rate = $veh['rate'];
+						break;
+					}
+				}				
+			?>				
+			<h2>Review Your Reservation</h2>
+			<p>Name:           <?php echo $fname; ?> <?php echo $lname; ?>
+			<br>Email:         <?php echo $email; ?>
+			<br>Phone:         <?php echo $tel; ?></p>
+			<p>Location:       <?php echo $loc; ?></p>
+			<p>Date &amp Time: <?php echo $put; ?></p>
+			<p>Vehicle:        <?php echo $carname; ?></p></p>
+			<p>Total:          <?php echo $rate; ?></p>
+			<button class='rentbutton' onclick="window.location.href='confirmation.php'">Submit</button>
+		</div>
+		<!--------------------------------------------------------------------->
 		<footer>
 			<div style="margin:20px; text-align:center;">
 				<img src="pics/logo.png" height="100">&copy

@@ -4,11 +4,11 @@
 	<head>
 		<meta charset = "utf-8">
 		<link rel="icon" href="pics/minilogo.png">
-		<title>Car4Rate | About Us</title>
+		<title>Car4Rent | Select Vehicle</title>
 		<link rel = "stylesheet" type = "text/css" href = "style.css">
 		<style type="text/css"> 
 			.banner {display:none;}
-			.centered {position:absolute; left:50%; top:50%; transform: translate(-50%,-50%); padding:10px;}
+			sup {font-size:9pt;}
 		</style>
 	</head>
 	<body>
@@ -166,29 +166,64 @@
 				<img id="bannerimage" src="pics/CSRa.jpg" height="400" alt="cars">
 			</div>
 		</div>
-		<div style="margin:50px; font-size:14pt;">
-			<h1>About Car4Rent</h1>
-			<p>Car4Rent is an ongoing American success story. Our guiding principles, and humble beginning, 
-			revolve around personal honesty and integrity. We believe in strengthening our communities one neighborhood at a time, 
-			serving our customers as if they were our family, and rewarding hard work. 
-			These things are as true today as they were when we were founded in 2020.</p>
-
-			<p>In the future, the increase of network means Car4Rent will become the largest transportation solutions provider. 
-			We offer car and truck rentals, as well as car sharing and car sales. 
-			We're there when you need us with over 1,000 locations within Texas.</p>
-
-			<p>We take an active role in sustainability, not only because it’s smart for our business, 
-			but because we believe in making the world a better place for future generations. 
-			Because of our size, we are in a unique position to foster innovation, 
-			advance research and test market-driven solutions.</p>
-		</div>		
-		
-		<div class="divider2">
-			<div class="priceText">
-				<p>We guarantee our prices are the lowest, most affordable you can find. We're unbeatable!</p>
-			</div>
+		<!--Insert your BODY HERE!!!-->
+		<!--------------------------------------------------------------------->
+		<div style="margin:50px; font-size:14pt; border-bottom:5px solid darkgray;">
+			<nav style="margin-bottom:10px;">
+				<a class="header" style="float:none;color:#00361d" href="Booking.html">Check Availability</a> >
+				<a class="header" style="float:none;color:#00361d" href="SelectLocation.php">Select A Location</a> >
+				<span class="header" style="float:none;color:#00361d;background-color:yellow">Select A Vehicle</span> >
+				<span class="header" style="float:none;color:grey">Review & Submit</span>
+			</nav>
 		</div>
-		
+		<div style="margin:50px;">
+			<h2>Select a Vehicle:</h2>
+			<form action="ReviewBooking.php" method="post">
+				<?php
+					$fname = $_POST['fname'];
+					$lname = $_POST['lname'];
+					$email = $_POST['email'];
+					$tel = $_POST['tel'];
+					$put = $_POST['put'];
+					$rt = $_POST['rt'];
+					$loc = $_POST['location'];
+					echo "<input type='hidden' name='fname' value='".$fname."'>";
+					echo "<input type='hidden' name='lname' value='".$lname."'>";
+					echo "<input type='hidden' name='email' value='".$email."'>";
+					echo "<input type='hidden' name='tel' value='".$tel."'>";
+					echo "<input type='hidden' name='put' value='".$put."'>";
+					echo "<input type='hidden' name='rt' value='".$rt."'>";
+					echo "<input type='hidden' name='loc' value='".$loc."'>";
+				?>
+				<fieldset>
+					<legend>Mitsubishi Mirage</legend>
+					<div style="display:inline-block">
+						<img src="cars/EconomyCar.png" alt="Economy Car" style="width:150px">
+					</div>
+					<div style="display:inline-block">
+						<p class="msrp"><img src="pics/passenger.png" height="10"> Passengers: 4</p>
+						<p class="price">$48.<sup>98</sup> per day</p>
+						<input type="hidden" name='veh[name]' value='Mitsubishi Mirage'>
+						<input type="hidden" name="veh[rate]" value="$48.98">
+						<p><input type="submit" name='veh[submit]' value="Select"></input></p>
+					</div>
+				</fieldset>
+				<fieldset>				
+					<legend>Nissan Versa</legend>
+					<div style="display:inline-block">
+						<img src="cars/CompactCar.png" alt="Compact Car" style="width:150px">
+					</div>
+					<div style="display:inline-block">
+						<p class="msrp"><img src="pics/passenger.png" height="10"> Passengers: 5</p>
+						<p class="price">$54.<sup>98</sup> per day</p>
+						<input type="hidden" name='veh[name]' value='Nissan Versa'>
+						<input type="hidden" name="veh[rate]" value="$54.98">
+						<p><input type="submit" name='veh[submit]' value="Select"></input></p>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<!--------------------------------------------------------------------->
 		<footer>
 			<div style="margin:20px; text-align:center;">
 				<img src="pics/logo.png" height="100">&copy

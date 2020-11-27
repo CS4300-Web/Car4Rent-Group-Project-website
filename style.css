@@ -106,7 +106,7 @@ a.sm:hover {color: white;}
 				-o-column-gap: 10px; 
 				column-gap: 10px;}
 .rentbutton {color:white; background-color:#51b54c; height:55px; width:200px;}
-.rentbutton:hover {text-shadow:2px 2px 2px black; background-color:#318f2f;}
+.rentbutton:hover {text-shadow:2px 2px 2px black; background-color:#318f2f; cursor:pointer;}
 .learnbutton {color:white; background-color:#51b54c; height:55px; width:200px;}
 .learnbutton:hover {text-shadow:2px 2px 2px black; background-color:#318f2f;}
 #loc {height:30px; font-size:14pt; border: solid 1px lightgrey; border-radius:2px; padding-left:10px;}

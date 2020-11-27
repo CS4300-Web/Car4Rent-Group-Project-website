@@ -4,11 +4,10 @@
 	<head>
 		<meta charset = "utf-8">
 		<link rel="icon" href="pics/minilogo.png">
-		<title>Car4Rate | About Us</title>
+		<title>Car4Rent | Austin</title>
 		<link rel = "stylesheet" type = "text/css" href = "style.css">
 		<style type="text/css"> 
 			.banner {display:none;}
-			.centered {position:absolute; left:50%; top:50%; transform: translate(-50%,-50%); padding:10px;}
 		</style>
 	</head>
 	<body>
@@ -166,29 +165,58 @@
 				<img id="bannerimage" src="pics/CSRa.jpg" height="400" alt="cars">
 			</div>
 		</div>
+		<!--Insert your BODY HERE!!!-->
+		<!--------------------------------------------------------------------->
 		<div style="margin:50px; font-size:14pt;">
-			<h1>About Car4Rent</h1>
-			<p>Car4Rent is an ongoing American success story. Our guiding principles, and humble beginning, 
-			revolve around personal honesty and integrity. We believe in strengthening our communities one neighborhood at a time, 
-			serving our customers as if they were our family, and rewarding hard work. 
-			These things are as true today as they were when we were founded in 2020.</p>
+			<div style="margin:50px; font-size:14pt; border-bottom:5px solid darkgray;">
+				<nav style="margin-bottom:10px;">
+					<a class="header" style="float:none;color:#00361d" href="Houston.php">Houston</a> |
+					<a class="header" style="float:none;color:#00361d" href="Austin.php">Austin</a> |
+					<span class="header" style="float:none;color:#00361d">Dallas</span>
+				</nav>
+			</div>
+			<div style="margin:50px;">
+				<?php
+					$user = 'root';
+					$pass = '';
+					$host = 'localhost';
+					$db_name = 'car4rent';
 
-			<p>In the future, the increase of network means Car4Rent will become the largest transportation solutions provider. 
-			We offer car and truck rentals, as well as car sharing and car sales. 
-			We're there when you need us with over 1,000 locations within Texas.</p>
+					// set up DSN
+					$dsn = "mysql:host=$host;dbname=$db_name";
 
-			<p>We take an active role in sustainability, not only because it’s smart for our business, 
-			but because we believe in making the world a better place for future generations. 
-			Because of our size, we are in a unique position to foster innovation, 
-			advance research and test market-driven solutions.</p>
-		</div>		
-		
-		<div class="divider2">
-			<div class="priceText">
-				<p>We guarantee our prices are the lowest, most affordable you can find. We're unbeatable!</p>
+					// connect to database
+					try {
+						$db = new PDO($dsn, $user, $pass); 
+
+						// perform query
+						$query = "SELECT locationName, locationStreet, locationCity, locationState, locationZip FROM locations WHERE locationCity like 'Dallas'";  
+						$stmt = $db->prepare($query);  
+						$stmt->bindParam('Dallas', $locationCity);
+						$stmt->execute(); 
+
+						// get number of returned rows  
+						echo "<h2>Dallas locations: ".$stmt->rowCount()."</h2>"; 
+
+						// display each returned row
+						while($result = $stmt->fetch(PDO::FETCH_OBJ)) {                                                       
+							echo "<p><strong>".$result->locationName."</strong>";                               
+							echo "<br />".$result->locationStreet;                                             
+							echo "<br />".$result->locationCity;
+							echo " ".$result->locationState; 							
+							echo ", ".$result->locationZip;"</p>";                                         
+						}         
+
+						// disconnect from database
+						$db = NULL;
+					} 	catch (PDOException $e) {
+						echo "Error: ".$e->getMessage();
+						exit;
+					}
+				?>
 			</div>
 		</div>
-		
+		<!--------------------------------------------------------------------->
 		<footer>
 			<div style="margin:20px; text-align:center;">
 				<img src="pics/logo.png" height="100">&copy

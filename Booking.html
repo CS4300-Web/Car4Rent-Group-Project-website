@@ -4,11 +4,10 @@
 	<head>
 		<meta charset = "utf-8">
 		<link rel="icon" href="pics/minilogo.png">
-		<title>Car4Rate | About Us</title>
+		<title>Car4Rent | Reservation</title>
 		<link rel = "stylesheet" type = "text/css" href = "style.css">
 		<style type="text/css"> 
 			.banner {display:none;}
-			.centered {position:absolute; left:50%; top:50%; transform: translate(-50%,-50%); padding:10px;}
 		</style>
 	</head>
 	<body>
@@ -166,29 +165,80 @@
 				<img id="bannerimage" src="pics/CSRa.jpg" height="400" alt="cars">
 			</div>
 		</div>
-		<div style="margin:50px; font-size:14pt;">
-			<h1>About Car4Rent</h1>
-			<p>Car4Rent is an ongoing American success story. Our guiding principles, and humble beginning, 
-			revolve around personal honesty and integrity. We believe in strengthening our communities one neighborhood at a time, 
-			serving our customers as if they were our family, and rewarding hard work. 
-			These things are as true today as they were when we were founded in 2020.</p>
-
-			<p>In the future, the increase of network means Car4Rent will become the largest transportation solutions provider. 
-			We offer car and truck rentals, as well as car sharing and car sales. 
-			We're there when you need us with over 1,000 locations within Texas.</p>
-
-			<p>We take an active role in sustainability, not only because it’s smart for our business, 
-			but because we believe in making the world a better place for future generations. 
-			Because of our size, we are in a unique position to foster innovation, 
-			advance research and test market-driven solutions.</p>
-		</div>		
-		
-		<div class="divider2">
-			<div class="priceText">
-				<p>We guarantee our prices are the lowest, most affordable you can find. We're unbeatable!</p>
-			</div>
+		<!--Insert your BODY HERE!!!-->
+		<!--------------------------------------------------------------------->
+		<div style="margin:50px; font-size:14pt; border-bottom:5px solid darkgray;">
+			<nav style="margin-bottom:10px;">
+				<span class="header" style="float:none;color:#00361d;background-color:yellow">Check Availability</span> >
+				<span class="header" style="float:none;color:grey">Select A Location</span> >
+				<span class="header" style="float:none;color:grey">Select A Vehicle</span> >
+				<span class="header" style="float:none;color:grey">Review & Submit</span>
+			</nav>
 		</div>
-		
+		<div style="margin:50px;">
+			<form action="SelectLocation.php" method="post">
+				<fieldset>
+					<legend><h3>Personal Details</h3></legend>
+					
+					<label for="given_name_field">First Name:</label>
+					<input id="given_name_field" type="text" name="given_name_value" placeholder="First Name" required/>
+					<br />
+					<br />
+					<label for="family_name_field">Last Name:</label>
+					<input id="family_name_field" type="text" name="family_name_value" placeholder="Last Name" required/>
+					<br />
+					<br />
+					<label for="email_address">Email Address:</label>
+					<input id="email_address_field" type="text" name="email_value" placeholder="email@yahoo.com"/>
+					<br />
+					<br />
+					<label for="phone_number_field">Phone Number:</label>
+					<input id="phone_number_field" type="text" name="phone_number_value" placeholder="000-000-0000" required/>
+					<br />
+					<br />					
+					<label for="age_field">Age Range</label>
+					<select id="age_field" name="age_value">
+						<option value="18-25">18-25</option>
+						<option value="26-35">26-35</option>
+						<option value="36-50">36-50</option>
+						<option value="51-65">51-65</option>
+						<option value="over65">Over 65</option>
+					</select>					
+					<br />
+					<br />
+				</fieldset>
+				<fieldset>
+					<legend><h3>Select Area</h3></legend>
+					<select id="loc_field" name="loc">
+						<option value="Houston">Houston</option>
+						<option value="Austin">Austin</option>
+						<option value="Dallas">Dallas</option>
+					</select> <br><br>		
+				</fieldset>
+				<fieldset>
+					<legend><h3>Select Vehicle Type</h3></legend>
+					<input type="radio" name="preferred_vehicle_types" value="small" checked/>Car<br />
+					<input type="radio" name="preferred_vehicle_types" value="medium" />SUV<br />
+					<input type="radio" name="preferred_vehicle_types" value="medium" />Truck<br />
+					<input type="radio" name="preferred_vehicle_types" value="large" />Van
+					<br><br>
+				</fieldset>
+				<fieldset>
+					<legend><h3>Rental Period</h3></legend>
+					Pick Up Date & Time: <input type="datetime-local" name="pickupdt" required>
+					<br />
+					<br />
+					Return Date & Time: <input type="datetime-local" name="returndt" required>
+					<br><br>						
+								
+				</fieldset>
+				<p>
+					<button class="rentbutton" type="submit">Next</button>
+				</p>
+								 
+			</form>
+		</div>
+		<!--------------------------------------------------------------------->
 		<footer>
 			<div style="margin:20px; text-align:center;">
 				<img src="pics/logo.png" height="100">&copy
