@@ -201,7 +201,11 @@
 			<p>Date &amp Time: <?php echo $put; ?></p>
 			<p>Vehicle:        <?php echo $carname; ?></p></p>
 			<p>Total:          <?php echo $rate; ?></p>
-			<button class='rentbutton' onclick="window.location.href='confirmation.php'">Submit</button>
+			
+			<form method="post" action="confirmation.php">			
+				<?php echo "<input type='hidden' name='fname' value='".$fname."'>"; ?>
+				<input class='rentbutton' type="submit">
+			</form>
 		</div>
 		<!--------------------------------------------------------------------->
 		<footer>

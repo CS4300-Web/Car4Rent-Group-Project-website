@@ -168,6 +168,10 @@
 		<!--Insert your BODY HERE!!!-->
 		<!--------------------------------------------------------------------->
 		<div style="margin:50px; font-size:14pt; height:330px; text-align:center;">
+			<?php
+				$fname = $_POST['fname'];
+			?>
+			<p>Thank you, <?php echo $fname; ?>.</p>
 			<p>Your reservation has been submitted.</p>
 			<p>We have also sent you a confirmation email.</p>
 			<p>See you soon.</p>
