@@ -46,7 +46,7 @@
 			// Prepare a select statement
 			$sql = "SELECT id, username, password FROM users WHERE username = ?";
 			
-			if($stmt = mysqli_prepare($db, $sql)){
+			if($stmt = mysqli_prepare($link, $sql)){
 				// Bind variables to the prepared statement as parameters
 				mysqli_stmt_bind_param($stmt, "s", $param_username);
 				
@@ -76,12 +76,12 @@
 								header("location: Welcome.php");
 							} else{
 								// Display an error message if password is not valid
-								$password_err = "The password you entered was not valid.";
+								$password_err = "The password you entered was not valid. Try again.";
 							}
 						}
 					} else{
 						// Display an error message if username doesn't exist
-						$username_err = "No account found with that username.";
+						$username_err = "No account found with that username. Try again.";
 					}
 				} else{
 					echo "Oops! Something went wrong. Please try again later.";
@@ -93,13 +93,19 @@
 		}
 		
 		// Close connection
-		mysqli_close($db);
+		mysqli_close($link);
 	}
 	?>
 	<div class = "form-container">
 	 <ul class= "list">
 		<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 			<li><h2>Sign In</h2></li>
+			<div class="<?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+				<p style="color:red;"><?php echo $username_err; ?></p><br>
+			</div>
+			<div class="<?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+				<p style="color:red;"><?php echo $password_err; ?></p><br>
+			</div>
 			<li><input type="text" name="username" placeholder="Username" required> </li>
 			<li><input type="password" name="password" placeholder="Password" required></li>
 			<li><button class="rentbutton" onclick="submit">Sign In</button></li>

@@ -36,17 +36,17 @@
 			if ($stmt->rowCount() > 0){
 				echo "<p>Username exists.</p>";
 				echo "<p><a href='signup.html'>Retry</a></p>";
-				echo "<p><a href='signin.html'>Login</a></p>";
+				echo "<p><a href='signin.php'>Login</a></p>";
 			} */
 			if ($password == $password2) {
-				$query2 = "INSERT INTO users VALUES (?,?)";
+				$query2 = "INSERT INTO users (username,password) VALUES (?,?)";
 				$stmt2 = $db->prepare($query2);
 				$stmt2->bind_param('ss',$username, $password);
 				$stmt2->execute();
 				
 				if ($stmt2->affected_rows > 0) {
 					echo  "<p>You have created an account successfully.</p>";
-					echo "<p>Click <a href='signin.html'>here</a> to sign in.</p>";
+					echo "<p>Click <a href='signin.php'>here</a> to sign in.</p>";
 				} else {
 					echo "<p>An error has occurred.<br/></p>";
 					echo "<p><a href='signup.html'>Retry</a></p>";
