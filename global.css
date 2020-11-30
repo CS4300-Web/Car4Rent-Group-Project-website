@@ -1,6 +1,6 @@
 *{margin: 0; padding:0}
 body{
-	background-color:#90EE90;
+	background-color:#e6ffec;
 	padding-top: 10vh;
 }
 .form-container{
@@ -29,8 +29,8 @@ ul.list li input{
 	border:none;
 	background-color: #d3d3d3;
 }
-ul.list li input[type="button"]{
-	background-color: #4690fb;
+ul.list li input[type="submit"]{
+	background-color:#51b54c;
 	color: #fff;
 }
 

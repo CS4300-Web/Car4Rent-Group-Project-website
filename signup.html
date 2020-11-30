@@ -1,20 +1,30 @@
 <!DOCTYPE html>
+<!--Tamim Gerbi-->
 <html>
 <head>
-	  <title>Login Form</title>
-	  <link rel="stylesheet" type="text/css" href="global.css">
+	<meta charset = "utf-8">
+	<link rel="icon" href="pics/minilogo.png">
+	<title>Car4Rent | User Sign Up</title>
+	<link rel="stylesheet" type="text/css" href="global.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div class = "form-container">
- <ul class= "list">
-	<li><h2>member login</h2></li>
-	<li><input type="text" name="first name" placeholder="first name"> </li>
-	<li><input type="text" name="last name" placeholder="last name"> </li>
-	<li><input type="email" name="email" placeholder="email"> </li>
-	<li><input type="password" name="password" placeholder="password"></li>
-	<p><span><input type = "checkbox"></span> i agree to the terms of services</p>
-	<li><input type="button" name="submit" value="submit"></li>
- </ul>
- </div>
+	<div class = "form-container">
+		<form method="post" action="signup.php">
+		<ul class= "list">
+			<li><h2>Sign Up</h2></li>
+			<li><input type="username" name="username" placeholder="Username" required> </li>
+			<li><input type="password" name="password" placeholder="Password" required></li>
+			<li><input type="password" name="password2" placeholder="Confirm Password" required></li>
+			<p><span><input type = "checkbox" required></span> I agree to the terms of services</p>
+			<li><br><button class="rentbutton" onclick="submit">Submit</button></li>
+			<li>Already have an account? <a href="signin.html">Sign In</a></li>
+		</ul>
+		</form>
+	 </div>
+	 <div style="margin:20px; text-align:center;">
+		<br><br><br><br><br><br>
+		<a href="HomePage.html"><img src="pics/logo.png" height="100"></a>
+	</div>
 </body>
 </html>
