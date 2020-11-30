@@ -157,3 +157,57 @@ a.sm:hover {color: white;}
     background-position: center;
     background-repeat: no-repeat;
 }
+
+
+/* Style tab links */
+.tablink {
+	background-color:  #e6ffec;
+	color: black;
+	float: left;
+	border: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	font-size: 17px;
+	width: 25%;
+	
+  }
+  
+  .tablink:hover {
+	background-color: #C3C3C3;
+  }
+  
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+	  background-color:  #c7c9c7;
+	color: black;
+	display: none;
+	padding: 100px 20px;
+	height: 100%;
+  }
+  
+  
+  #Reservations {background-color: #e6ffec;}
+  #MyInfo {background-color:  #e6ffec;}
+
+  .cancel_button{
+	float: left;
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+  }
+  .car_info{
+	background-color: #e6ffec;
+	width: 90%; 
+	border: none;
+	color: black;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px; 
+  }
