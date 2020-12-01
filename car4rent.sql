@@ -7,6 +7,8 @@
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
+-- This SQL is used for User-inferface.php page
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
